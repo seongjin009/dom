@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hello</title>
+</head>
+
+<body>
+
+  <!--
+    static DOM(HTML태그로 구성하는 돔)
+    dynamic DOM(자바스크립트로 구성하는 돔)
+
+    <a href"#"">LINK</a>
+
+    template literal
+    : 문자안에 변수를 편하게 삽입할 때
+
+    BOM(Browser Object moder) window
+    DOM(Document Object model)
+    -html (element node)
+    -a (a element node, text node, attribute node)
+  -->
+
+
+  <script>
+    const a = document.createElement('a');
+    const href = document.createAttribute('href');
+    const text = 'LINK';
+    href.value = '#';
+    a.setAttributeNode(href);
+    a.innerText = text;
+
+    //append : 기존 부모요소의 DOM구조를 유지하면서 추가로 DOM을 삽입
+    //인수로는 노드객체만 전달가능
+    //document.body.append(a);
+    document.body.prepend(a);
+  </script>
+
+</body>
+
+</html>
